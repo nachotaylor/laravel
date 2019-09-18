@@ -111,9 +111,15 @@ return [
         'MAIN NAVIGATION',
         [
             'text' => 'Users',
-            'url' => 'user/index',
-            'icon' => 'user',
-            'active' => ['user/*']
+            'url' => 'admin/index',
+            'icon' => 'glyphicon glyphicon-user',
+            'active' => ['admin/*']
+        ],
+        [
+            'text' => 'Productores',
+            'url' => 'producer/index',
+            'icon' => 'fa fa-users',
+            'active' => ['producer/*']
         ],
     ],
 
@@ -149,8 +155,37 @@ return [
     */
 
     'plugins' => [
-        'datatables' => true,
-        'select2' => true,
-        'chartjs' => true,
-    ],
+        [
+            'name' => 'datatables',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css',
+                ],
+            ],
+        ],
+        [
+            'name' => 'select2',
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/js/select2.min.js',
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css',
+                ],
+            ],
+        ],
+    ]
 ];

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::middleware('auth:api')->get('/admin', function (Request $request) {
     return $request->user();
 });
 
@@ -25,7 +25,7 @@ Route::group(['as' => 'api::'], function () {
         Route::post('logout', 'Api\AuthController@logout')->name('logout');
     });
 
-    Route::group(['prefix' => 'user', 'as' => 'user::'], function () {
+    Route::group(['prefix' => 'admin', 'as' => 'admin::'], function () {
         Route::get('get/{id}', 'Api\UserController@get')->name('get');
         Route::get('', 'Api\UserController@all')->name('all');
         Route::post('create', 'Api\UserController@create')->name('create');

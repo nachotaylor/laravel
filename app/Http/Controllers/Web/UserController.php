@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Constants\UserType;
 use App\Http\Requests\User\CreateUserRequest;
 use App\Http\Requests\User\UpdateUserRequest;
 use App\Repositories\User\UserRepository;
@@ -10,46 +11,46 @@ use Exception;
 
 class UserController extends Controller
 {
-    protected $user;
+    protected $model;
 
     public function __construct(UserRepository $user)
     {
-        $this->user = $user;
+        $this->model = $user;
         $this->middleware('auth');
     }
 
     public function index()
     {
-        return view('user.index', ['users' => $this->user->all()]);
+        return view('admin.index', ['users' => $this->model->getAll(UserType::ADMIN)]);
     }
 
     public function update(UpdateUserRequest $request, $id)
     {
         try {
-            $this->user->updateUser($request->all(), $id);
-            return redirect('user/index')->with('message', 'Usuario modificado.');
+            $this->model->updateUser($request->all(), $id);
+            return redirect()->back()->with('message', 'Usuario modificado.');
         } catch (Exception $exception) {
-            return redirect('user/index')->with('error', $exception->getMessage());
+            return redirect()->back()->with('error', $exception->getMessage());
         }
     }
 
     public function create(CreateUserRequest $request)
     {
         try {
-            $this->user->store($request->all());
-            return redirect('user/index')->with('message', 'Usuario creado.');
+            $this->model->store($request->all(), UserType::ADMIN);
+            return redirect()->back()->with('message', 'Usuario creado.');
         } catch (Exception $exception) {
-            return redirect('user/index')->with('error', $exception->getMessage());
+            return redirect()->back()->with('error', $exception->getMessage());
         }
     }
 
     public function delete($id)
     {
         try {
-            $this->user->deleteUser($id);
+            $this->model->deleteUser($id);
             return redirect()->back()->with('message', 'Usuario eliminado.');
         } catch (Exception $exception) {
-            return redirect('user/index')->with('error', $exception->getMessage());
+            return redirect()->back()->with('error', $exception->getMessage());
         }
     }
 }

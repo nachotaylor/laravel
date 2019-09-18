@@ -36,10 +36,10 @@
                         @foreach($users as $user)
                             <tr>
                                 <td>
-                                    {{$user->name}}<br>
+                                    {{$user->name}}
                                 </td>
                                 <td>
-                                    <a href="mailto:{{$user->email}}">{{strlen($user->email) > 36 ? substr($user->email, 0, 32).'...' : $user->email}}</a><br>
+                                    <a href="mailto:{{$user->email}}">{{strlen($user->email) > 36 ? substr($user->email, 0, 32).'...' : $user->email}}</a>
                                 </td>
                                 <td>
                                     <a class="btn btn-primary" data-toggle="modal"
@@ -47,7 +47,7 @@
                                 </td>
                                 <td>
                                     <a type="button" class="btn btn-danger" data-toggle="modal"
-                                       data-target="#modal-danger{{ $user->id }}"><i class="fa fa-trash-o"></i></a>
+                                       data-target="#modal-danger{{ $user->id }}"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
 
@@ -58,7 +58,7 @@
                                             <span aria-hidden="true">×</span></button>
                                         <h4 class="modal-title">Editar usuario</h4>
                                     </div>
-                                    {!! Form::model($user, ['route' => ['user::update', $user], 'method' => 'PUT']) !!}
+                                    {!! Form::model($user, ['route' => ['admin::update', $user], 'method' => 'PUT']) !!}
                                     <div class="modal-body box-body">
                                         <div class="form-group">
                                             {!! Form::label('name','Nombre',['class' => 'control-label']) !!}
@@ -96,7 +96,7 @@
                                             <button type="button" class="btn btn-outline pull-left"
                                                     data-dismiss="modal">Cerrar
                                             </button>
-                                            {!! Form::model($user, ['route' => ['user::delete', $user], 'method' => 'DELETE']) !!}
+                                            {!! Form::model($user, ['route' => ['admin::delete', $user], 'method' => 'DELETE']) !!}
                                             {!! Form::submit('Eliminar',['class' => 'btn btn-outline']) !!}
                                             {!! Form::close() !!}
                                         </div>
@@ -124,7 +124,7 @@
                         <span aria-hidden="true">×</span></button>
                     <h4 class="modal-title">Nuevo usuario</h4>
                 </div>
-                {!! Form::open((['route' => 'user::create', 'method' => 'POST'])) !!}
+                {!! Form::open((['route' => 'admin::create', 'method' => 'POST'])) !!}
                 <div class="modal-body">
                     <div class="box-body">
                         <div class="form-group">
@@ -151,17 +151,4 @@
         </div>
 
     </div>
-@stop
-
-@section('js')
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#table').DataTable({
-                dom: 'Bfrtip',
-                language: {
-                    //'url': '//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json'
-                }
-            });
-        });
-    </script>
 @stop

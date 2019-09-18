@@ -109,7 +109,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Specify the length of time (in minutes) that the token can be refreshed
-    | within. I.E. The user can refresh their token within a 2 week window of
+    | within. I.E. The admin can refresh their token within a 2 week window of
     | the original token being created until they must re-authenticate.
     | Defaults to 2 weeks.
     |
@@ -271,12 +271,12 @@ return [
         | User Provider
         |--------------------------------------------------------------------------
         |
-        | Specify the provider that is used to find the user based
+        | Specify the provider that is used to find the admin based
         | on the subject claim
         |
         */
 
-        'user' => Tymon\JWTAuth\Providers\User\EloquentUserAdapter::class,
+        'admin' => \Illuminate\Auth\EloquentUserProvider::class,
 
         /*
         |--------------------------------------------------------------------------
@@ -287,7 +287,7 @@ return [
         |
         */
 
-        'jwt' => Tymon\JWTAuth\Providers\JWT\NamshiAdapter::class,
+        'jwt' => Tymon\JWTAuth\Providers\JWT\Namshi::class,
 
         /*
         |--------------------------------------------------------------------------
@@ -298,7 +298,7 @@ return [
         |
         */
 
-        'auth' => Tymon\JWTAuth\Providers\Auth\IlluminateAuthAdapter::class,
+        'auth' => Tymon\JWTAuth\Providers\Auth\Illuminate::class,
 
         /*
         |--------------------------------------------------------------------------
@@ -309,7 +309,7 @@ return [
         |
         */
 
-        'storage' => Tymon\JWTAuth\Providers\Storage\IlluminateCacheAdapter::class,
+        'storage' => Tymon\JWTAuth\Providers\Storage\Illuminate::class,
 
     ],
 

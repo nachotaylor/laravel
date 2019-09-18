@@ -9,7 +9,7 @@ class UserControllerTest extends FeatureTestCase
 {
     public function test_create_user()
     {
-        $response = $this->doPost(route('api::user::create'), [
+        $response = $this->doPost(route('api::admin::create'), [
             "name" => "admin",
             "email" => "test@admin.com",
             "password" => "admin"
@@ -29,7 +29,7 @@ class UserControllerTest extends FeatureTestCase
 
     public function test_create_exist_user()
     {
-        $response = $this->doPost(route('api::user::create'), [
+        $response = $this->doPost(route('api::admin::create'), [
             "name" => "admin",
             "email" => "admin@admin.com",
             "password" => "admin"
@@ -51,7 +51,7 @@ class UserControllerTest extends FeatureTestCase
     {
         $user = $this->createUser();
 
-        $response = $this->actingAsJWT($user)->doPut(route('api::user::update', $user->id), [
+        $response = $this->actingAsJWT($user)->doPut(route('api::admin::update', $user->id), [
             'name' => $user->name,
             'email' => $user->email
         ]);
@@ -74,7 +74,7 @@ class UserControllerTest extends FeatureTestCase
     {
         $user = User::first();
 
-        $response = $this->actingAsJWT($user)->doGet(route('api::user::get', $user->id));
+        $response = $this->actingAsJWT($user)->doGet(route('api::admin::get', $user->id));
 
         $response
             ->assertStatus(200)
@@ -96,7 +96,7 @@ class UserControllerTest extends FeatureTestCase
             $this->createUser();
         }
 
-        $response = $this->actingAsJWT($user)->doGet(route('api::user::all'));
+        $response = $this->actingAsJWT($user)->doGet(route('api::admin::all'));
 
         $response
             ->assertStatus(200)
@@ -112,12 +112,12 @@ class UserControllerTest extends FeatureTestCase
 
         $this
             ->actingAsJWT($user)
-            ->doDelete(route('api::user::delete', $user->id))
+            ->doDelete(route('api::admin::delete', $user->id))
             ->assertStatus(200)
             ->assertJson([
                 'status' => 'success',
                 'data' => true,
-                'message' => 'The user was eliminated successfully.',
+                'message' => 'The admin was eliminated successfully.',
             ]);
     }
 
@@ -127,7 +127,7 @@ class UserControllerTest extends FeatureTestCase
 
         $this
             ->actingAsJWT($user)
-            ->doDelete(route('api::user::delete', 0))
+            ->doDelete(route('api::admin::delete', 0))
             ->assertStatus(404)
             ->assertJson([
                 'status' => 'error',
