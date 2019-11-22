@@ -40,6 +40,7 @@ class UserController extends Controller
             $this->model->store($request->all(), UserType::ADMIN);
             return redirect()->back()->with('message', 'Usuario creado.');
         } catch (Exception $exception) {
+            dd($exception->getMessage());
             return redirect()->back()->with('error', $exception->getMessage());
         }
     }

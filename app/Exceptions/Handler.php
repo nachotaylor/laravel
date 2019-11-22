@@ -21,7 +21,7 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        //
+        \Illuminate\Validation\ValidationException::class,
     ];
 
     /**
@@ -85,6 +85,9 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        if ($exception instanceof ValidationException) {
+            return response()->json($exception->validator->errors()->all(), Response::HTTP_BAD_REQUEST );
+        }
         // Implicit model binding exception
         if ($exception instanceof ModelNotFoundException) {
             return $this->modelNotFoundExceptionResponse($exception);
@@ -92,10 +95,6 @@ class Handler extends ExceptionHandler
         // Not Found HTTP exception
         if ($exception instanceof NotFoundHttpException) {
             return response()->json(['error' => 'Not Found'], Response::HTTP_NOT_FOUND);
-        }
-        // Laravel handle this exception internally
-        if ($exception instanceof ValidationException) {
-            return parent::render($request, $exception);
         }
         // JWT exceptions
         if ($exception instanceof TokenExpiredException) {
@@ -105,7 +104,6 @@ class Handler extends ExceptionHandler
         if ($exception instanceof TokenInvalidException) {
             return response()->json(['error' => 'Token is Invalid'], Response::HTTP_UNAUTHORIZED);
         }
-
         if ($exception instanceof JWTException) {
             return response()->json(['error' => 'Token is not present'], Response::HTTP_NOT_FOUND);
         }

@@ -8,7 +8,7 @@ use App\Repositories\User\UserRepository;
 use App\Http\Controllers\Controller;
 use Exception;
 use Illuminate\Http\Request;
-use Tymon\JWTAuth\Facades\JWTAuth;
+use JWTAuth;
 
 class AuthController extends Controller
 {
@@ -16,7 +16,7 @@ class AuthController extends Controller
 
     public function __construct(UserRepository $user)
     {
-        $this->middleware('jwt.auth', ['except' => ['login', 'forgot', 'reset']]);
+        $this->middleware('jwt.auth')->except('login', 'forgot', 'reset');
         $this->model = $user;
     }
 

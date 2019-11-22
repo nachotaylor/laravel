@@ -2,6 +2,7 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/vendor/almasaeed2010/adminlte" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/beyondcode/laravel-dump-server" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dnoegel/php-xdg-base-dir" />
@@ -21,7 +22,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-color" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-highlighter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jeroennoten/laravel-adminlte" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/kylekatarnls/update-helper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/nexmo-notification-channel" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/slack-notification-channel" />
@@ -47,6 +47,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpoption/phpoption" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpspec/prophecy" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-code-coverage" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpunit/php-file-iterator" />
@@ -122,6 +123,7 @@
     <orderEntry type="module-library">
       <library name="PHP" type="php">
         <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/almasaeed2010/adminlte" />
           <root url="file://$MODULE_DIR$/vendor/beyondcode/laravel-dump-server" />
           <root url="file://$MODULE_DIR$/vendor/composer" />
           <root url="file://$MODULE_DIR$/vendor/dnoegel/php-xdg-base-dir" />
@@ -134,17 +136,11 @@
           <root url="file://$MODULE_DIR$/vendor/fideloper/proxy" />
           <root url="file://$MODULE_DIR$/vendor/filp/whoops" />
           <root url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
-          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
-          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
-          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
           <root url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
           <root url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-color" />
           <root url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-highlighter" />
           <root url="file://$MODULE_DIR$/vendor/jeroennoten/laravel-adminlte" />
-          <root url="file://$MODULE_DIR$/vendor/kylekatarnls/update-helper" />
           <root url="file://$MODULE_DIR$/vendor/laravel/framework" />
-          <root url="file://$MODULE_DIR$/vendor/laravel/nexmo-notification-channel" />
-          <root url="file://$MODULE_DIR$/vendor/laravel/slack-notification-channel" />
           <root url="file://$MODULE_DIR$/vendor/laravel/tinker" />
           <root url="file://$MODULE_DIR$/vendor/laravelcollective/html" />
           <root url="file://$MODULE_DIR$/vendor/lcobucci/jwt" />
@@ -154,19 +150,16 @@
           <root url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
           <root url="file://$MODULE_DIR$/vendor/namshi/jose" />
           <root url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
-          <root url="file://$MODULE_DIR$/vendor/nexmo/client" />
           <root url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
           <root url="file://$MODULE_DIR$/vendor/nunomaduro/collision" />
           <root url="file://$MODULE_DIR$/vendor/opis/closure" />
           <root url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
           <root url="file://$MODULE_DIR$/vendor/phar-io/manifest" />
           <root url="file://$MODULE_DIR$/vendor/phar-io/version" />
-          <root url="file://$MODULE_DIR$/vendor/php-http/guzzle6-adapter" />
-          <root url="file://$MODULE_DIR$/vendor/php-http/httplug" />
-          <root url="file://$MODULE_DIR$/vendor/php-http/promise" />
           <root url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-common" />
           <root url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
           <root url="file://$MODULE_DIR$/vendor/phpdocumentor/type-resolver" />
+          <root url="file://$MODULE_DIR$/vendor/phpoption/phpoption" />
           <root url="file://$MODULE_DIR$/vendor/phpspec/prophecy" />
           <root url="file://$MODULE_DIR$/vendor/phpunit/php-code-coverage" />
           <root url="file://$MODULE_DIR$/vendor/phpunit/php-file-iterator" />
@@ -175,12 +168,9 @@
           <root url="file://$MODULE_DIR$/vendor/phpunit/php-token-stream" />
           <root url="file://$MODULE_DIR$/vendor/phpunit/phpunit" />
           <root url="file://$MODULE_DIR$/vendor/psr/container" />
-          <root url="file://$MODULE_DIR$/vendor/psr/http-factory" />
-          <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
           <root url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
           <root url="file://$MODULE_DIR$/vendor/psy/psysh" />
-          <root url="file://$MODULE_DIR$/vendor/ralouphie/getallheaders" />
           <root url="file://$MODULE_DIR$/vendor/ramsey/uuid" />
           <root url="file://$MODULE_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
           <root url="file://$MODULE_DIR$/vendor/sebastian/comparator" />
@@ -223,9 +213,9 @@
           <root url="file://$MODULE_DIR$/vendor/tymon/jwt-auth" />
           <root url="file://$MODULE_DIR$/vendor/vlucas/phpdotenv" />
           <root url="file://$MODULE_DIR$/vendor/webmozart/assert" />
-          <root url="file://$MODULE_DIR$/vendor/zendframework/zend-diactoros" />
         </CLASSES>
         <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/almasaeed2010/adminlte" />
           <root url="file://$MODULE_DIR$/vendor/beyondcode/laravel-dump-server" />
           <root url="file://$MODULE_DIR$/vendor/composer" />
           <root url="file://$MODULE_DIR$/vendor/dnoegel/php-xdg-base-dir" />
@@ -238,17 +228,11 @@
           <root url="file://$MODULE_DIR$/vendor/fideloper/proxy" />
           <root url="file://$MODULE_DIR$/vendor/filp/whoops" />
           <root url="file://$MODULE_DIR$/vendor/fzaninotto/faker" />
-          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
-          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
-          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
           <root url="file://$MODULE_DIR$/vendor/hamcrest/hamcrest-php" />
           <root url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-color" />
           <root url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-highlighter" />
           <root url="file://$MODULE_DIR$/vendor/jeroennoten/laravel-adminlte" />
-          <root url="file://$MODULE_DIR$/vendor/kylekatarnls/update-helper" />
           <root url="file://$MODULE_DIR$/vendor/laravel/framework" />
-          <root url="file://$MODULE_DIR$/vendor/laravel/nexmo-notification-channel" />
-          <root url="file://$MODULE_DIR$/vendor/laravel/slack-notification-channel" />
           <root url="file://$MODULE_DIR$/vendor/laravel/tinker" />
           <root url="file://$MODULE_DIR$/vendor/laravelcollective/html" />
           <root url="file://$MODULE_DIR$/vendor/lcobucci/jwt" />
@@ -258,19 +242,16 @@
           <root url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
           <root url="file://$MODULE_DIR$/vendor/namshi/jose" />
           <root url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
-          <root url="file://$MODULE_DIR$/vendor/nexmo/client" />
           <root url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
           <root url="file://$MODULE_DIR$/vendor/nunomaduro/collision" />
           <root url="file://$MODULE_DIR$/vendor/opis/closure" />
           <root url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
           <root url="file://$MODULE_DIR$/vendor/phar-io/manifest" />
           <root url="file://$MODULE_DIR$/vendor/phar-io/version" />
-          <root url="file://$MODULE_DIR$/vendor/php-http/guzzle6-adapter" />
-          <root url="file://$MODULE_DIR$/vendor/php-http/httplug" />
-          <root url="file://$MODULE_DIR$/vendor/php-http/promise" />
           <root url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-common" />
           <root url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
           <root url="file://$MODULE_DIR$/vendor/phpdocumentor/type-resolver" />
+          <root url="file://$MODULE_DIR$/vendor/phpoption/phpoption" />
           <root url="file://$MODULE_DIR$/vendor/phpspec/prophecy" />
           <root url="file://$MODULE_DIR$/vendor/phpunit/php-code-coverage" />
           <root url="file://$MODULE_DIR$/vendor/phpunit/php-file-iterator" />
@@ -279,12 +260,9 @@
           <root url="file://$MODULE_DIR$/vendor/phpunit/php-token-stream" />
           <root url="file://$MODULE_DIR$/vendor/phpunit/phpunit" />
           <root url="file://$MODULE_DIR$/vendor/psr/container" />
-          <root url="file://$MODULE_DIR$/vendor/psr/http-factory" />
-          <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
           <root url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
           <root url="file://$MODULE_DIR$/vendor/psy/psysh" />
-          <root url="file://$MODULE_DIR$/vendor/ralouphie/getallheaders" />
           <root url="file://$MODULE_DIR$/vendor/ramsey/uuid" />
           <root url="file://$MODULE_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
           <root url="file://$MODULE_DIR$/vendor/sebastian/comparator" />
@@ -327,7 +305,6 @@
           <root url="file://$MODULE_DIR$/vendor/tymon/jwt-auth" />
           <root url="file://$MODULE_DIR$/vendor/vlucas/phpdotenv" />
           <root url="file://$MODULE_DIR$/vendor/webmozart/assert" />
-          <root url="file://$MODULE_DIR$/vendor/zendframework/zend-diactoros" />
         </SOURCES>
       </library>
     </orderEntry>

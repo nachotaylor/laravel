@@ -31,6 +31,7 @@ class UserRepository extends BaseRepository
     public function updateUser(array $data = [], $id)
     {
         $user = $this->findOrFail($id);
+        $data['password'] ? $data['password'] = Hash::make($data['password']) : 0;
         $user->update($data);
 
         return $user;
@@ -41,6 +42,13 @@ class UserRepository extends BaseRepository
         $user = $this->findOrFail($id);
 
         return $user->delete();
+    }
+
+    public function get($id)
+    {
+        $query = $this->model;
+
+        return $id ? $query->where('id', $id)->first() : $query->get();
     }
 
     public function getAll($type)

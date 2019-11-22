@@ -26,8 +26,8 @@ Route::group(['as' => 'api::'], function () {
     });
 
     Route::group(['prefix' => 'admin', 'as' => 'admin::'], function () {
-        Route::get('get/{id}', 'Api\UserController@get')->name('get');
-        Route::get('', 'Api\UserController@all')->name('all');
+        Route::get('', 'Api\UserController@get')->name('get');
+        Route::get('{id}', 'Api\UserController@get')->name('get');
         Route::post('create', 'Api\UserController@create')->name('create');
         Route::put('update/{id}', 'Api\UserController@update')->name('update');
         Route::delete('delete/{id}', 'Api\UserController@delete')->name('delete');
